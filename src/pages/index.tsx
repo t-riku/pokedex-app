@@ -4,6 +4,7 @@ import styles from "../styles/Home.module.scss";
 import style from "./index.module.scss";
 import Topbar from "src/components/Topbar/Topbar";
 import Bottombar from "src/components/Bottombar/Bottombar";
+import PokeList from "src/components/PokeList/PokeList";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +18,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Topbar />
+
+      <PokeList />
 
       <Bottombar />
 
