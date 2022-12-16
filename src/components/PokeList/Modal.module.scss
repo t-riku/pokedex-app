@@ -1,0 +1,41 @@
+@import "src/styles/variable";
+
+.modal {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  background-image: url(../../../public/assets/modal_bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.modal_X {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  border-radius: 50%;
+  padding: 5px 10px;
+  background: $black;
+  color: $white;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.modal_image {
+  filter: drop-shadow(2px 4px 12px $black);
+}
+
+.stat__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 450px;
+  height: 500px;
+}
