@@ -2,7 +2,8 @@ import Head from "next/head";
 import { Inter } from "@next/font/google";
 import styles from "../styles/Home.module.scss";
 import style from "./index.module.scss";
-import Header from "src/components/Header/Header";
+import Topbar from "src/components/Topbar/Topbar";
+import Bottombar from "src/components/Bottombar/Bottombar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,8 +16,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
-      <p className={style.scss_test}>Scss Test</p>
+      <Topbar />
+
+      <Bottombar />
+
+      {/* <p className={style.scss_test}>Scss Test</p> */}
     </>
   );
 }
