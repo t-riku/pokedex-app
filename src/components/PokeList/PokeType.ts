@@ -4,7 +4,7 @@ export type ITEM = {
   name: string;
   // image?: StaticImageData|string;
   image: string;
-  type: string;
+  type: any;
   weight: number;
   height: number;
   stats: any;
