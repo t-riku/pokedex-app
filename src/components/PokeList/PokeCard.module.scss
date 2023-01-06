@@ -54,9 +54,9 @@
   background: #dbdbd9;
   text-align: center;
 }
-.stat__right {
-  background: $white;
-}
+// .stat__right {
+//   background: $white;
+// }
 
 .right {
   display: flex;
@@ -143,6 +143,24 @@
   }
 }
 
+// ================================types==================================
+
+.card_types {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 1rem;
+}
+
+.card_types span {
+  font-size: 12px;
+  padding: 5px 20px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+// ======================================================================
+
 .unit {
   /* smallよりもさらに小さい */
   font-size: xx-small;
@@ -168,6 +186,10 @@
   background: #5a5a58;
   color: $white;
   border-bottom: 1px solid $white;
+}
+
+.total_stats {
+  font-weight: bold;
 }
 // .stats:nth-child(1),
 // .stats:nth-child(2) {
