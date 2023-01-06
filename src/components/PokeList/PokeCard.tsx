@@ -3,6 +3,20 @@ import c from "src/components/PokeList/PokeCard.module.scss";
 import pokeball from "public/assets/pokeball.png";
 import Image from "next/image";
 import Modal from "src/components/PokeList/Modal";
+import { ITEM } from "src/components/PokeList/PokeType";
+
+// // 型定義
+// export type ITEM = {
+//   id: number;
+//   name: string;
+//   // image?: StaticImageData|string;
+//   image: string;
+//   type: string;
+//   weight: string;
+//   height: string;
+//   stats: number;
+//   statsName: string;
+// };
 
 const PokeCard = ({
   id,
@@ -13,7 +27,8 @@ const PokeCard = ({
   height,
   stats,
   statsName,
-}) => {
+  totalStats,
+}: any) => {
   const [isShown, setIsShown] = useState(false);
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -57,20 +72,32 @@ const PokeCard = ({
             </div>
             <div className={c.stat__right}>
               <p>{type}</p>
-              <p>{height}0 cm</p>
-              <p>{weight} 1bs</p>
+              <p>
+                {height}
+                <span className={c.unit}> (m)</span>
+              </p>
+              <p>
+                {weight}
+                <span className={c.unit}> (kg)</span>
+              </p>
             </div>
           </div>
           <div className={c.base_stats}>
             <div>
-              {statsName.map((stats: any) => (
-                <p className={c.stats}>{stats}</p>
+              {statsName.map((stats: string, index: number) => (
+                <p className={c.stats} key={index}>
+                  {stats}
+                </p>
               ))}
+              totalStats
             </div>
             <div>
-              {stats.map((stats: any) => (
-                <p className={c.stats}>{stats}</p>
+              {stats.map((stats: number, index: number) => (
+                <p className={c.stats} key={index}>
+                  {stats}
+                </p>
               ))}
+              {totalStats}
             </div>
           </div>
         </div>
@@ -101,6 +128,7 @@ const PokeCard = ({
           weight={weight}
           stats={stats}
           statsName={statsName}
+          totalStats={totalStats}
           type={type}
           onClick={closeModalHandler}
         />

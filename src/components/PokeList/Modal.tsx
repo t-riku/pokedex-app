@@ -2,6 +2,7 @@ import React from "react";
 import pokeball from "public/assets/pokeball.png";
 import classes from "src/components/PokeList/Modal.module.scss";
 import c from "src/components/PokeList/PokeCard.module.scss";
+import { ITEM } from "src/components/PokeList/PokeType";
 
 import Image from "next/image";
 
@@ -15,7 +16,8 @@ const Modal = ({
   weight,
   stats,
   statsName,
-}) => {
+  totalStats,
+}: ITEM) => {
   return (
     <div className={classes.modal}>
       <div onClick={onClick} className={classes.modal_X}>
@@ -58,14 +60,20 @@ const Modal = ({
         </div>
         <div className={c.base_stats}>
           <div>
-            {statsName.map((stats: any) => (
-              <p className={c.stats}>{stats}</p>
+            {statsName.map((stats: string, index: number) => (
+              <p className={c.stats} key={index}>
+                {stats}
+              </p>
             ))}
+            totalStats
           </div>
           <div>
-            {stats.map((stats: any) => (
-              <p className={c.stats}>{stats}</p>
+            {stats.map((stats: number, index: number) => (
+              <p className={c.stats} key={index}>
+                {stats}
+              </p>
             ))}
+            {totalStats}
           </div>
         </div>
       </div>

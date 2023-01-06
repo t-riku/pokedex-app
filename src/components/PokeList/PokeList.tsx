@@ -32,21 +32,24 @@ const PokeList = () => {
     <div className={c.app__container}>
       <div className={c.poke__container}>
         <div className={c.all__container}>
-          {allPokemons.map((pokemonStats: any, index: any) => (
+          {allPokemons.map((pokemonStats: any, index: number) => (
             <PokeCard
               key={index}
               id={pokemonStats.id.toString().padStart(3, "0")}
               image={
                 pokemonStats.sprites.other["official-artwork"].front_default
               }
-              name={pokemonStats.name.replace(/^./, (str: any) =>
+              name={pokemonStats.name.replace(/^./, (str: string) =>
                 str.toUpperCase()
               )}
               type={pokemonStats.types[0].type.name}
-              weight={pokemonStats.weight}
-              height={pokemonStats.height}
+              weight={(pokemonStats.weight / 10).toFixed(1)}
+              height={(pokemonStats.height / 10).toFixed(1)}
               stats={pokemonStats.stats.map((stat: any) => stat.base_stat)}
               statsName={pokemonStats.stats.map((stat: any) => stat.stat.name)}
+              totalStats={pokemonStats.stats
+                .map((stat: any) => stat.base_stat)
+                .reduce((base_stat: number, acc: number) => base_stat + acc)}
             />
           ))}
         </div>
