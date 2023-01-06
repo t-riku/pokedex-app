@@ -20,9 +20,7 @@ const Modal = ({
 }: ITEM) => {
   return (
     <div className={classes.modal}>
-      <div onClick={onClick} className={classes.modal_X}>
-        X
-      </div>
+      <button onClick={onClick} className={classes.modal__btn__close}></button>
       <div className={classes.modal_image_wrapper}>
         <Image
           src={image}
@@ -44,24 +42,35 @@ const Modal = ({
           />
           <p className={c.poke_num}>No. {id}</p>
           <p>{name}</p>
-          <Image
+          {/* <Image
             src={pokeball}
             alt="pokeball"
             className={c.pokeball_title}
             width={30}
             height={30}
-          />
+          /> */}
         </div>
         <div className={c.stat__container}>
-          <div className={c.stat__left}>
-            <p>Type</p>
-            <p>Height</p>
-            <p>Weight</p>
-          </div>
           <div className={c.stat__right}>
-            <p>{type}</p>
-            <p>{height}0 cm</p>
-            <p>{weight} 1bs</p>
+            {/* <p>{type}</p> */}
+            <div className={c.card_types}>
+              {/* タイプは複数ある可能性があるためmap関数で全部とってくる */}
+              {type.map((type: any) => {
+                return (
+                  <span key={type.type.name} className={type.type.name}>
+                    {type.type.name}
+                  </span>
+                );
+              })}
+            </div>
+            <p>
+              高さ：{height}
+              <span className={c.unit}> (m)</span>
+            </p>
+            <p>
+              重さ：{weight}
+              <span className={c.unit}> (kg)</span>
+            </p>
           </div>
         </div>
         <div className={c.base_stats}>
@@ -71,7 +80,8 @@ const Modal = ({
                 {stats}
               </p>
             ))}
-            totalStats
+            {/* totalStats */}
+            <p className={c.total_stats}>TotalStats</p>
           </div>
           <div>
             {stats.map((stats: number, index: number) => (
@@ -79,7 +89,7 @@ const Modal = ({
                 {stats}
               </p>
             ))}
-            {totalStats}
+            <p className={c.total_stats}>{totalStats}</p>
           </div>
         </div>
       </div>

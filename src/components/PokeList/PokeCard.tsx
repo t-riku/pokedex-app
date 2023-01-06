@@ -40,13 +40,13 @@ const PokeCard = ({
             />
             <p className={c.poke_num}>No. {id}</p>
             <p>{name}</p>
-            <Image
+            {/* <Image
               src={pokeball}
               alt="pokeball"
               className={c.pokeball_title}
               width={30}
               height={30}
-            />
+            /> */}
           </div>
           <Image
             src={image}
@@ -56,21 +56,18 @@ const PokeCard = ({
             sizes="100vw"
           />
           <div className={c.stat__container}>
-            <div className={c.stat__left}>
-              <p>Type</p>
-              <p>Height</p>
-              <p>Weight</p>
-            </div>
             <div className={c.stat__right}>
-              <p>{type}</p>
-              <p>
-                {height}
-                <span className={c.unit}> (m)</span>
-              </p>
-              <p>
-                {weight}
-                <span className={c.unit}> (kg)</span>
-              </p>
+              {/* <p>{type}</p> */}
+              <div className={c.card_types}>
+                {/* タイプは複数ある可能性があるためmap関数で全部とってくる */}
+                {type.map((type: any) => {
+                  return (
+                    <span key={type.type.name} className={type.type.name}>
+                      {type.type.name}
+                    </span>
+                  );
+                })}
+              </div>
             </div>
           </div>
           <div className={c.base_stats}>
@@ -80,7 +77,7 @@ const PokeCard = ({
                   {stats}
                 </p>
               ))}
-              totalStats
+              <p className={c.total_stats}>TotalStats</p>
             </div>
             <div>
               {stats.map((stats: number, index: number) => (
@@ -88,7 +85,7 @@ const PokeCard = ({
                   {stats}
                 </p>
               ))}
-              {totalStats}
+              <p className={c.total_stats}>{totalStats}</p>
             </div>
           </div>
         </div>
@@ -108,13 +105,13 @@ const PokeCard = ({
         />
         <p className={c.right_id}>No. {id}</p>
         <p>{name}</p>
-        <Image
+        {/* <Image
           src={pokeball}
           alt="pokeball"
           className={c.right_img}
           width={30}
           height={30}
-        />
+        /> */}
       </div>
       {modalIsOpen && (
         <Modal

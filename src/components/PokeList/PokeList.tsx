@@ -42,7 +42,7 @@ const PokeList = () => {
               name={pokemonStats.name.replace(/^./, (str: string) =>
                 str.toUpperCase()
               )}
-              type={pokemonStats.types[0].type.name}
+              type={pokemonStats.types}
               weight={(pokemonStats.weight / 10).toFixed(1)}
               height={(pokemonStats.height / 10).toFixed(1)}
               stats={pokemonStats.stats.map((stat: any) => stat.base_stat)}
