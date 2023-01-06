@@ -28,8 +28,8 @@ const Modal = ({
           src={image}
           alt={name}
           className={classes.modal_image}
-          width={30}
-          height={30}
+          fill
+          style={{ objectFit: "contain" }}
         />
       </div>
       <div className={classes.stat__container}>
@@ -39,8 +39,8 @@ const Modal = ({
             src={image}
             alt={name}
             className={c.image_title}
-            width={30}
-            height={30}
+            fill
+            style={{ objectFit: "contain" }}
           />
           <p className={c.poke_num}>No. {id}</p>
           <p>{name}</p>

@@ -29,6 +29,9 @@
 
 .modal_image {
   filter: drop-shadow(2px 4px 12px $black);
+  object-fit: contain;
+  position: relative !important;
+  width: auto !important;
 }
 
 .stat__container {

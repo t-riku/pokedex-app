@@ -21,6 +21,12 @@
   color: $black;
 }
 
+.main_image {
+  object-fit: contain;
+  position: relative !important;
+  width: auto !important;
+}
+
 .stat__container {
   display: flex;
   width: 100%;
@@ -80,8 +86,11 @@
   width: 270px;
 }
 .right_img {
-  margin-left: auto;
-  width: 40px;
+  // margin-left: auto;
+  // width: 40px;
+  object-fit: contain;
+  position: relative !important;
+  width: auto !important;
 }
 
 .show > img {
@@ -103,9 +112,11 @@
   background: linear-gradient(135deg, #f0501d 40%, $black 40%);
 }
 .image_title {
-  width: 45px;
   min-height: 60px;
   margin-right: 10px;
+  object-fit: contain;
+  position: relative !important;
+  width: auto !important;
 }
 .pokeball_title {
   width: 40px;
