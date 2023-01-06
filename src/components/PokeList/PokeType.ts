@@ -5,10 +5,10 @@ export type ITEM = {
   // image?: StaticImageData|string;
   image: string;
   type: string;
-  weight: string;
-  height: string;
-  stats: number;
-  statsName: string;
+  weight: number;
+  height: number;
+  stats: any;
+  statsName: any;
   onClick?: any;
   totalStats?: number;
 };
