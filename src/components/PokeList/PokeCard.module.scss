@@ -26,6 +26,7 @@
   width: 100%;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
 }
 
 .stat__left {
@@ -126,6 +127,13 @@
   padding: 10px;
   border-bottom: 1px solid #90979f38;
 }
+
+.unit {
+  /* smallよりもさらに小さい */
+  font-size: xx-small;
+  padding-left: 0.1rem;
+}
+
 .base_stats {
   display: flex;
   width: 100%;
