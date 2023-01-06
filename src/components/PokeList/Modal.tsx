@@ -24,17 +24,23 @@ const Modal = ({
         X
       </div>
       <div>
-        <img src={image} alt={name} className={classes.modal_image} />
+        <Image
+          src={image}
+          alt={name}
+          className={classes.modal_image}
+          width={30}
+          height={30}
+        />
       </div>
       <div className={classes.stat__container}>
         {/* <div className={classes.stat__content}> */}
         <div className={c.stat__container_title}>
-          <img
+          <Image
             src={image}
             alt={name}
             className={c.image_title}
-            // width={30}
-            // height={30}
+            width={30}
+            height={30}
           />
           <p className={c.poke_num}>No. {id}</p>
           <p>{name}</p>

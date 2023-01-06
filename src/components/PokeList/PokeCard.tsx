@@ -3,20 +3,6 @@ import c from "src/components/PokeList/PokeCard.module.scss";
 import pokeball from "public/assets/pokeball.png";
 import Image from "next/image";
 import Modal from "src/components/PokeList/Modal";
-import { ITEM } from "src/components/PokeList/PokeType";
-
-// // 型定義
-// export type ITEM = {
-//   id: number;
-//   name: string;
-//   // image?: StaticImageData|string;
-//   image: string;
-//   type: string;
-//   weight: string;
-//   height: string;
-//   stats: number;
-//   statsName: string;
-// };
 
 const PokeCard = ({
   id,
@@ -45,12 +31,12 @@ const PokeCard = ({
       {isShown && (
         <div className={c.show}>
           <div className={c.stat__container_title}>
-            <img
+            <Image
               src={image}
               alt={name}
               className={c.image_title}
-              // width={30}
-              // height={30}
+              width={30}
+              height={30}
             />
             <p className={c.poke_num}>No. {id}</p>
             <p>{name}</p>
@@ -63,7 +49,7 @@ const PokeCard = ({
             />
           </div>
           {/* <Image src={image} alt={name} width={30} height={30} /> */}
-          <img src={image} alt={name} />
+          <Image src={image} alt={name} width={30} height={30} />
           <div className={c.stat__container}>
             <div className={c.stat__left}>
               <p>Type</p>
@@ -108,7 +94,13 @@ const PokeCard = ({
         onMouseLeave={() => setIsShown(false)}
         onClick={modalHandler}
       >
-        <img src={image} alt={name} className={c.right_img} />
+        <Image
+          src={image}
+          alt={name}
+          className={c.right_img}
+          width={30}
+          height={30}
+        />
         <p className={c.right_id}>No. {id}</p>
         <p>{name}</p>
         <Image
