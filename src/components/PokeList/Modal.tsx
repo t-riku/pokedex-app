@@ -23,13 +23,13 @@ const Modal = ({
       <div onClick={onClick} className={classes.modal_X}>
         X
       </div>
-      <div>
+      <div className={classes.modal_image_wrapper}>
         <Image
           src={image}
           alt={name}
           className={classes.modal_image}
           fill
-          style={{ objectFit: "contain" }}
+          sizes="100vw"
         />
       </div>
       <div className={classes.stat__container}>
@@ -40,7 +40,7 @@ const Modal = ({
             alt={name}
             className={c.image_title}
             fill
-            style={{ objectFit: "contain" }}
+            sizes="100vw"
           />
           <p className={c.poke_num}>No. {id}</p>
           <p>{name}</p>

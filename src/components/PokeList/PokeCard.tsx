@@ -36,7 +36,7 @@ const PokeCard = ({
               alt={name}
               className={c.image_title}
               fill
-              style={{ objectFit: "contain" }}
+              sizes="100vw"
             />
             <p className={c.poke_num}>No. {id}</p>
             <p>{name}</p>
@@ -53,7 +53,7 @@ const PokeCard = ({
             alt={name}
             className={c.main_image}
             fill
-            style={{ objectFit: "contain" }}
+            sizes="100vw"
           />
           <div className={c.stat__container}>
             <div className={c.stat__left}>
@@ -104,7 +104,7 @@ const PokeCard = ({
           alt={name}
           className={c.right_img}
           fill
-          style={{ objectFit: "contain" }}
+          sizes="100vw"
         />
         <p className={c.right_id}>No. {id}</p>
         <p>{name}</p>

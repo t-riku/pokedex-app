@@ -9,8 +9,14 @@ const Header = () => {
   return (
     <div className={c.title}>
       <div className={c.title__left}>
-        <Image src={pokemon_logo} alt="pokemon_logo" width={40} height={40} />
-        <div className={c.caught__seen}>
+        <Image
+          src={pokemon_logo}
+          alt="pokemon_logo"
+          className={c.pokemon_logo}
+          fill
+          sizes="100vw"
+        />
+        {/* <div className={c.caught__seen}>
           <div className={c.caught}>
             <Image src={pokeball_white} alt="pokeball" width={30} height={30} />
             <p>438</p>
@@ -19,7 +25,7 @@ const Header = () => {
             <Image src={pokeball} alt="pokeball" width={30} height={30} />
             <p>649</p>
           </div>
-        </div>
+        </div> */}
       </div>
       <p className={c.a_z}>A -&gt; Z</p>
     </div>
