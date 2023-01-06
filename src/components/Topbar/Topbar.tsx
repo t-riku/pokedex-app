@@ -27,7 +27,7 @@ const Header = () => {
           </div>
         </div> */}
       </div>
-      <p className={c.a_z}>A -&gt; Z</p>
+      {/* <p className={c.a_z}>A -&gt; Z</p> */}
     </div>
   );
 };
