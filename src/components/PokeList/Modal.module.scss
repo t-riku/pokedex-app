@@ -13,32 +13,36 @@
   background-image: url(../../../public/assets/modal_bg.png);
   background-repeat: no-repeat;
   background-size: cover;
-}
 
-.modal_X {
-  position: absolute;
-  top: 50px;
-  right: 50px;
-  border-radius: 50%;
-  padding: 5px 10px;
-  background: $black;
-  color: $white;
-  font-weight: 900;
-  cursor: pointer;
-}
+  .modal_X {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    border-radius: 50%;
+    padding: 5px 10px;
+    background: $black;
+    color: $white;
+    font-weight: 900;
+    cursor: pointer;
+  }
 
-.modal_image {
-  filter: drop-shadow(2px 4px 12px $black);
-  object-fit: contain;
-  position: relative !important;
-  width: auto !important;
-}
+  .modal_image_wrapper {
+    position: relative;
 
-.stat__container {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
-  width: 450px;
-  height: 500px;
+    .modal_image {
+      filter: drop-shadow(2px 4px 12px $black);
+      object-fit: contain;
+      position: relative !important;
+      width: auto !important;
+    }
+  }
+
+  .stat__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 450px;
+    height: 500px;
+  }
 }
