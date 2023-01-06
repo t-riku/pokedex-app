@@ -3,12 +3,13 @@ import React from "react";
 import c from "src/components/Topbar/Topbar.module.scss";
 import pokeball from "public/assets/pokeball.png";
 import pokeball_white from "public/assets/pokeball_white.png";
+import pokemon_logo from "public/assets/pokemon_logo.png";
 
 const Header = () => {
   return (
     <div className={c.title}>
       <div className={c.title__left}>
-        <p>Pokedex</p>
+        <Image src={pokemon_logo} alt="pokemon_logo" width={40} height={40} />
         <div className={c.caught__seen}>
           <div className={c.caught}>
             <Image src={pokeball_white} alt="pokeball" width={30} height={30} />
