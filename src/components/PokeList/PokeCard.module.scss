@@ -188,6 +188,43 @@
   border-bottom: 1px solid $white;
 }
 
+.bar_graph_wrap {
+  position: relative;
+  height: 28px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.graph {
+  height: 25px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #03a9f4;
+  border-radius: 0 4px 4px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  animation: graphAnim 0.6s forwards;
+
+  span {
+    font-size: 14px;
+    color: #ffffff;
+  }
+}
+
+@keyframes graphAnim {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .total_stats {
   font-weight: bold;
 }
