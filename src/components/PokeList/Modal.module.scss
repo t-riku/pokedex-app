@@ -78,4 +78,12 @@
     width: 450px;
     height: 500px;
   }
+
+  .abilities {
+    display: flex;
+
+    span {
+      padding-right: 1rem;
+    }
+  }
 }

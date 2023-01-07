@@ -45,6 +45,7 @@ const PokeList = () => {
               type={pokemonStats.types}
               weight={(pokemonStats.weight / 10).toFixed(1)}
               height={(pokemonStats.height / 10).toFixed(1)}
+              abilities={pokemonStats.abilities}
               stats={pokemonStats.stats.map((stat: any) => stat.base_stat)}
               statsName={pokemonStats.stats.map((stat: any) => stat.stat.name)}
               totalStats={pokemonStats.stats

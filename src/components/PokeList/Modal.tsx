@@ -17,6 +17,7 @@ const Modal = ({
   stats,
   statsName,
   totalStats,
+  abilities,
 }: ITEM) => {
   return (
     <div className={classes.modal}>
@@ -71,6 +72,16 @@ const Modal = ({
               重さ：{weight}
               <span className={c.unit}> (kg)</span>
             </p>
+            <div className={classes.abilities}>
+              <p>特性：</p>
+
+              {/* 特性は複数ある可能性があるためmap関数で全部とってくる */}
+              {abilities.map((ability: any) => {
+                return (
+                  <span key={ability.ability.name}>{ability.ability.name}</span>
+                );
+              })}
+            </div>
           </div>
         </div>
         <div className={c.base_stats}>
@@ -80,14 +91,15 @@ const Modal = ({
                 {stats}
               </p>
             ))}
-            {/* totalStats */}
             <p className={c.total_stats}>TotalStats</p>
           </div>
           <div>
             {stats.map((stats: number, index: number) => (
-              <p className={c.stats} key={index}>
-                {stats}
-              </p>
+              <div className={c.bar_graph_wrap} key={index}>
+                <div className={c.graph} style={{ width: stats - 25 + "%" }}>
+                  <span className={c.number}>{stats}</span>
+                </div>
+              </div>
             ))}
             <p className={c.total_stats}>{totalStats}</p>
           </div>

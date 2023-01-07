@@ -14,6 +14,7 @@ const PokeCard = ({
   stats,
   statsName,
   totalStats,
+  abilities,
 }: any) => {
   const [isShown, setIsShown] = useState(false);
 
@@ -25,6 +26,9 @@ const PokeCard = ({
   const closeModalHandler = () => {
     setModalIsOpen(false);
   };
+
+  // const style = {width: {stats}%}
+  // const style={width: {stats}}
 
   return (
     <div className={c.container}>
@@ -81,9 +85,11 @@ const PokeCard = ({
             </div>
             <div>
               {stats.map((stats: number, index: number) => (
-                <p className={c.stats} key={index}>
-                  {stats}
-                </p>
+                <div className={c.bar_graph_wrap} key={index}>
+                  <div className={c.graph} style={{ width: stats - 25 + "%" }}>
+                    <span className={c.number}>{stats}</span>
+                  </div>
+                </div>
               ))}
               <p className={c.total_stats}>{totalStats}</p>
             </div>
@@ -124,6 +130,7 @@ const PokeCard = ({
           statsName={statsName}
           totalStats={totalStats}
           type={type}
+          abilities={abilities}
           onClick={closeModalHandler}
         />
       )}

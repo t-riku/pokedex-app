@@ -11,4 +11,5 @@ export type ITEM = {
   statsName: any;
   onClick?: any;
   totalStats?: number;
+  abilities?: any;
 };
