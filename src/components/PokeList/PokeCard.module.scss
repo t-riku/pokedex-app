@@ -99,6 +99,7 @@
 
 .right_id {
   width: 270px;
+  white-space: nowrap;
 }
 .right_img {
   // margin-left: auto;
@@ -232,3 +233,60 @@
 // .stats:nth-child(2) {
 //   border-bottom: 1px solid $white;
 // }
+
+/* ============== MEDIA QUERIES (MEDIUM DEVICES) タブレットサイズ ================= */
+@media (max-width: 1024px) {
+  .container {
+    justify-content: center;
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .right {
+    width: 100%;
+    margin: 8px auto;
+    padding: 5px 20px;
+    justify-content: flex-start;
+
+    &:hover {
+      background: linear-gradient(135deg, #f0501d 40%, black 40%);
+
+      .right_id {
+        color: $white;
+      }
+    }
+  }
+  .right_id {
+    width: 220px;
+    font-size: 1.2rem;
+    letter-spacing: -1px;
+    margin-right: 3rem;
+  }
+  .poke_name {
+    font-size: 22px;
+    // white-space: nowrap;
+  }
+}
+
+/* ============== MEDIA QUERIES (SMALL DEVICES) 携帯サイズ ================= */
+@media (max-width: 600px) {
+  .container {
+    width: 70%;
+  }
+  .right_id {
+    font-size: 0.8rem;
+  }
+  .poke_name {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 450px) {
+  .right_id {
+    width: 180px;
+    margin-right: 1rem;
+    font-size: 0.5rem;
+  }
+  .poke_name {
+    font-size: 1.2rem;
+  }
+}

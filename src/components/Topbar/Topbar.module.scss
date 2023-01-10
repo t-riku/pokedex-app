@@ -57,3 +57,18 @@
     color: "#fff";
   }
 }
+
+/* ============== MEDIA QUERIES (MEDIUM DEVICES) タブレットサイズ ================= */
+@media (max-width: 1024px) {
+  .title {
+    padding-left: 30px;
+  }
+}
+
+/* ============== MEDIA QUERIES (SMALL DEVICES) 携帯サイズ ================= */
+@media (max-width: 600px) {
+  .title {
+    padding: 0;
+    padding-left: 30px;
+  }
+}

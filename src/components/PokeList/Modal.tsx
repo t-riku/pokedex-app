@@ -1,5 +1,4 @@
 import React from "react";
-import pokeball from "public/assets/pokeball.png";
 import classes from "src/components/PokeList/Modal.module.scss";
 import c from "src/components/PokeList/PokeCard.module.scss";
 import { ITEM } from "src/components/PokeList/PokeType";
@@ -32,7 +31,6 @@ const Modal = ({
         />
       </div>
       <div className={classes.stat__container}>
-        {/* <div className={classes.stat__content}> */}
         <div className={c.stat__container_title}>
           <Image
             src={image}
@@ -41,19 +39,11 @@ const Modal = ({
             fill
             sizes="100vw"
           />
-          <p className={c.poke_num}>No. {id}</p>
+          <p className={`${c.poke_num} poke_number`}>No. {id}</p>
           <p>{name}</p>
-          {/* <Image
-            src={pokeball}
-            alt="pokeball"
-            className={c.pokeball_title}
-            width={30}
-            height={30}
-          /> */}
         </div>
         <div className={c.stat__container}>
           <div className={c.stat__right}>
-            {/* <p>{type}</p> */}
             <div className={c.card_types}>
               {/* タイプは複数ある可能性があるためmap関数で全部とってくる */}
               {type.map((type: any) => {

@@ -87,3 +87,21 @@
     }
   }
 }
+
+/* ============== MEDIA QUERIES (MEDIUM DEVICES) タブレットサイズ ================= */
+@media (max-width: 1024px) {
+  .modal_image_wrapper {
+    display: none;
+  }
+  .poke_nun {
+    color: $white;
+  }
+}
+
+/* ============== MEDIA QUERIES (SMALL DEVICES) 携帯サイズ ================= */
+@media (max-width: 600px) {
+  .stat__container {
+    width: 80% !important;
+    margin: 0 auto;
+  }
+}

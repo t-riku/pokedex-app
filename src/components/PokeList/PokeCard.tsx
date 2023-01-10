@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import c from "src/components/PokeList/PokeCard.module.scss";
-import pokeball from "public/assets/pokeball.png";
 import Image from "next/image";
 import Modal from "src/components/PokeList/Modal";
 
@@ -27,8 +26,12 @@ const PokeCard = ({
     setModalIsOpen(false);
   };
 
-  // const style = {width: {stats}%}
-  // const style={width: {stats}}
+  const mediaQueryList = window.matchMedia("(max-width:1024px)");
+
+  // 画面サイズが1024px以下ではonMouseEnter={() => setIsShown(true)}でカーソルを合わせた時に表示されないように
+  mediaQueryList.addEventListener("change", () => {
+    setIsShown(false);
+  });
 
   return (
     <div className={c.container}>
@@ -43,14 +46,7 @@ const PokeCard = ({
               sizes="100vw"
             />
             <p className={c.poke_num}>No. {id}</p>
-            <p>{name}</p>
-            {/* <Image
-              src={pokeball}
-              alt="pokeball"
-              className={c.pokeball_title}
-              width={30}
-              height={30}
-            /> */}
+            <p className={c.poke_name}>{name}</p>
           </div>
           <Image
             src={image}
@@ -61,7 +57,6 @@ const PokeCard = ({
           />
           <div className={c.stat__container}>
             <div className={c.stat__right}>
-              {/* <p>{type}</p> */}
               <div className={c.card_types}>
                 {/* タイプは複数ある可能性があるためmap関数で全部とってくる */}
                 {type.map((type: any) => {
@@ -110,14 +105,7 @@ const PokeCard = ({
           sizes="100vw"
         />
         <p className={c.right_id}>No. {id}</p>
-        <p>{name}</p>
-        {/* <Image
-          src={pokeball}
-          alt="pokeball"
-          className={c.right_img}
-          width={30}
-          height={30}
-        /> */}
+        <p className={c.poke_name}>{name}</p>
       </div>
       {modalIsOpen && (
         <Modal
